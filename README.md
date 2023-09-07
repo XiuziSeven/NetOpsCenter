@@ -29,6 +29,7 @@ ALTER DATABASE django DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci; 
 ```
 cd /opt
 git clone https://github.com/XiuziSeven/NetOpsCenter.git
+```
 ### 安装python模块
 ```
 source /opt/py3/bin/activate  #进入虚拟环境
