@@ -1,0 +1,15 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- 加载 Vue.js 应用的静态文件 -->
+    <script src="{% static 'js/vue-app.js' %}"></script>
+</head>
+<body>
+    <!-- 在此处包含 Vue.js 应用的 HTML 内容 -->
+    <div id="app"> <!-- 这里是 Vue.js 应用的容器 -->
+        {{ message }} <!-- Vue.js 应用的内容 -->
+    </div>
+</body>
+</html>
