@@ -1,1 +1,2 @@
 app/migrations/
+*.pyc
