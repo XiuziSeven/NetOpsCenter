@@ -25,17 +25,17 @@ grant all on django.* TO 'django'@'localhost' identified by 'django';
 ALTER DATABASE django DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;  修改数据库编码，解决中文乱码问题
 ```
 ### 拉取项目
+```
 cd /opt
-mkdir netopscenter
-cd netopscenter
-git clone https://github.com/XiuziSeven/NetOpsCenter
+git clone https://github.com/XiuziSeven/NetOpsCenter.git
 ### 安装python模块
 ```
-source /opt/py3/bin/active  #进入虚拟环境
+source /opt/py3/bin/activate  #进入虚拟环境
 pip install -r requirements.txt
 ```
 ### 初始化数据库
-python manage.py makemigrations
+cd /opt/NetOpsCenter/
+python manage.py makemigrations app
 python manage.py migrate  
 ### 创建默认管理员账号
 python manage.py createsuperuser
