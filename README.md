@@ -33,12 +33,14 @@ git clone https://github.com/XiuziSeven/NetOpsCenter.git
 ### 安装python模块
 ```
 source /opt/py3/bin/activate  #进入虚拟环境
+cd /opt/NetOpsCenter/
 pip install -r requirements.txt
 ```
 ### 初始化数据库
-cd /opt/NetOpsCenter/
+```
 python manage.py makemigrations app
-python manage.py migrate  
+python manage.py migrate
+```
 ### 创建默认管理员账号
 python manage.py createsuperuser
 ### 启用服务
