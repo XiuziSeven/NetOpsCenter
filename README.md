@@ -46,5 +46,6 @@ python manage.py  runserver 0.0.0.0:8000
 
 注：防火墙放行自行操作
 
-![image](https://github.com/XiuziSeven/NetOpsCenter/assets/127931829/7b9f9d50-8a10-4541-b184-d7fbc1859e01)
+![image](https://github.com/XiuziSeven/NetOpsCenter/assets/127931829/6176b2ed-1ab4-4c28-bb6b-f1ba11a22d5d)
+
 
