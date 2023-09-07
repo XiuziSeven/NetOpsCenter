@@ -1,7 +1,8 @@
 # NetOpsCenter
 基于vue+django开发的网络设备轻量化管理平台
 
-![image](https://github.com/XiuziSeven/NetOpsCenter/assets/127931829/d020555a-032a-4693-b955-1cfac6181d7b)
+![image](https://github.com/XiuziSeven/NetOpsCenter/assets/127931829/2eb5638c-8ab1-4c4e-92db-c856cd8df591)
+
 
 ### 安装python3
 安装python3 作者开发环境 python3.9.5 其他版本也可以#安装过程不赘述
@@ -45,4 +46,5 @@ python manage.py  runserver 0.0.0.0:8000
 
 注：防火墙放行自行操作
 
-![image](https://github.com/XiuziSeven/NetOpsCenter/assets/127931829/9412327a-3c9d-404a-9bfa-361e0a5b0c23)
+![image](https://github.com/XiuziSeven/NetOpsCenter/assets/127931829/7b9f9d50-8a10-4541-b184-d7fbc1859e01)
+
