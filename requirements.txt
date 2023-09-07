@@ -1,1 +1,8 @@
-python-iptables==1.0.1
+Django==4.0.6
+django-filter==22.1
+django-extensions==3.2.1
+djangorestframework==3.13.1
+djangorestframework-simplejwt==5.2.0
+mysqlclient==2.1.1
+netmiko==3.4.0
+psycopg2-binary==2.9.6
