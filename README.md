@@ -3,6 +3,8 @@
 
 ![image](https://github.com/XiuziSeven/NetOpsCenter/assets/127931829/2eb5638c-8ab1-4c4e-92db-c856cd8df591)
 
+### 功能介绍
+https://zhuanlan.zhihu.com/p/655040014
 
 ### 安装python3
 安装python3 作者开发环境 python3.9.5 其他版本也可以#安装过程不赘述
