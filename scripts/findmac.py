@@ -39,10 +39,13 @@ def findmac(devlist,mac_add):
             admin = list[3]
             devpasswd = list[4]
             id = list[5]
+            ssh_port = list[6].replace("\n", "")
             conn = ConnectHandler(device_type=devtype,
                                   host=ip,
+                                  port=ssh_port,
                                   username=admin,
                                   password=devpasswd,
+                                  conn_timeout = 100
                                   )
             # time.sleep(1)
             # print(f'已成功登陆交换机{hostname}')
@@ -142,10 +145,12 @@ def findmac_main(devicegroupid,mac_add):
             userid = Devices.objects.values_list('device_user', flat=True).get(id=i)
             username = DeviceUser.objects.values_list('username', flat=True).get(id=userid)
             password = DeviceUser.objects.values_list('password', flat=True).get(id=userid)
+            ssh_port = DeviceUser.objects.values_list('ssh_port', flat=True).get(id=userid)
         except:
             username = ''
             password = ''
-        a=f'{devicename},{devicebrand},{ip},{username},{password},{i}'
+            ssh_port = ''
+        a=f'{devicename},{devicebrand},{ip},{username},{password},{i},{ssh_port}'
         devlist.append(a)
     result = findmac(devlist,mac_add)
     return result
@@ -160,11 +165,12 @@ def findmac_changeinterface(deviceid,interface,changetype):
             userid = Devices.objects.values_list('device_user', flat=True).get(id=deviceid)
             username = DeviceUser.objects.values_list('username', flat=True).get(id=userid)
             password = DeviceUser.objects.values_list('password', flat=True).get(id=userid)
+            ssh_port = DeviceUser.objects.values_list('ssh_port', flat=True).get(id=userid)
         except:
             username = ''
             password = ''
-        a=f'{devicename},{devicebrand},{ip},{username},{password}'
-        print(a)
+            ssh_port = ''
+        a=f'{devicename},{devicebrand},{ip},{username},{password},{ssh_port}'
         line2 = a.replace("\n", "")
         list = line2.split(",")
         hostname = list[0]
@@ -172,11 +178,14 @@ def findmac_changeinterface(deviceid,interface,changetype):
         ip = list[2]
         admin = list[3]
         devpasswd = list[4]
+        ssh_port =list[5]
         conn = ConnectHandler(device_type=devtype,
-                              host=ip,
-                              username=admin,
-                              password=devpasswd,
-                              )
+                            host=ip,
+                            port=ssh_port,
+                            username=admin,
+                            password=devpasswd,
+                            conn_timeout = 100
+                            )
         cmd1 = f'int {interface}'
         cmd2 = f'dis mac-add | in {interface}'
         if changetype == "1":#802.1X

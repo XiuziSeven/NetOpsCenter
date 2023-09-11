@@ -50,6 +50,7 @@ class DeviceUser(models.Model):
     name = models.CharField(max_length=50,unique=True)
     username = models.CharField(max_length=50,blank=True,null=True,)
     password = models.CharField(max_length=50,blank=True,null=True,)
+    ssh_port = models.PositiveIntegerField(default=22)
     def delete(self, *args, **kwargs):
         # 如果该用户被其他模型关联，则将关联的字段置为空
         for related_model in self._meta.related_objects:

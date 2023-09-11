@@ -30,12 +30,12 @@ class DeviceTypeSerializer(serializers.HyperlinkedModelSerializer):
 class DeviceUserSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = DeviceUser
-        fields = ['id','name','username','password']
+        fields = ['id','name','username','password','ssh_port']
 
 class DeviceUserNopassSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = DeviceUser
-        fields = ['id','name','username']
+        fields = ['id','name','username','ssh_port']
         
 class DeviceBrandSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:

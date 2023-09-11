@@ -63,10 +63,12 @@ def defconfig(deviceid,backtype):
             userid = Devices.objects.values_list('device_user', flat=True).get(id=i)
             username = DeviceUser.objects.values_list('username', flat=True).get(id=userid)
             password = DeviceUser.objects.values_list('password', flat=True).get(id=userid)
+            ssh_port = DeviceUser.objects.values_list('ssh_port', flat=True).get(id=userid)
         except:
             username = ''
             password = ''
-        a=f'{devicename},{devicebrand},{ip},{username},{password}'
+            ssh_port = ''
+        a=f'{devicename},{devicebrand},{ip},{username},{password},{ssh_port}'
         devlist.append(a)
     result = multithred(50,logindev,devlist,backtype)
 
@@ -97,11 +99,14 @@ def logindev(devlist,backtype): #登录设备
         ip = list[2]
         admin = list[3]
         devpasswd = list[4].replace("\n", "")
+        ssh_port = list[5].replace("\n", "")
         result = ''
         conn = ConnectHandler(device_type=devtype,
                               host=ip,
+                              port=ssh_port,
                               username=admin,
                               password=devpasswd,
+                              conn_timeout = 100,
                               )
         """命令输入如下界面，无需输入sys 和 return，会自动进入配置模式，配置结束会自动退出"""
         if devtype == 'hp_comware':  ##H3C
