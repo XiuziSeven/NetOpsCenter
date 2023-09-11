@@ -67,7 +67,7 @@ def logindev(devlist,cmd): #登录设备
         result = ''
         conn = ConnectHandler(device_type=devtype,
                               host=ip,
-                              post =ssh_port,
+                              port =ssh_port,
                               username=admin,
                               password=devpasswd,
                               conn_timeout = 100,
