@@ -140,7 +140,7 @@ class ConfBakList(APIView):
 
         # 构建文件列表
         file_list = []
-        for filename in os.listdir(log_dir):
+        for filename in sorted(os.listdir(log_dir), reverse=True):
             filepath = os.path.join(log_dir, filename)
             if os.path.isfile(filepath):
                 file_list.append({
